@@ -1,0 +1,52 @@
+1.Sukses -> Untuk menambahkan record baru
+INSERT tAnggota A2006 Bella Jakarta Perempuan 550-1923;
+INSERT tBuku B005 Harry_Potter J_K_Rolling Fiksi 2004;
+INSERT tPinjam P1007 A2003 B003 05-04-2020 06-06-2020;
+
+2.Sukses -> Untuk memperbarui record 
+UPDATE tAnggota A2001 Azar Pandeglang Laki-Laki 550-2001;
+UPDATE tBuku B003 Percy_Jackson Rick_Riordan Fiksi 2005;
+UPDATE tPinjam P1004 A2003 B003 10-06-2020 10-07-2020;
+
+3.Sukses -> Untuk menghapus record
+DELETE tAnggota A2005;  
+DELETE tBuku B002;
+DELETE tPinjam P1000;
+
+4.Sukses -> Untuk menampilkan record
+SELECT tAnggota;                   
+SELECT tBuku;
+SELECT tPinjam;
+
+5.Sukses -> Untuk menambahkan/memperbarui record
+INSERT UPDATE tAnggota A2011 Fika Bandung Perempuan 550-1945;
+INSERT UPDATE tBuku B001 The_Maze_Runner James_Dashner Fiksi 2009;
+
+6.Sukses -> Untuk menampilkan semua tabel
+SELECT tAnggota tBuku tPinjam;
+SELECT tPinjam tAnggota tBuku;
+
+INSERT tPenerbit A2004 Erlangga Jakarta 550-2990;               -> tabel tidak sesuai*
+UPDATE tPenerbit A2004 Erlangga Jakarta 550-2990;               -> tabel tidak sesuai
+DELETE tPenerbit A2001;                                         -> tabel tidak sesuai
+SELECT tPenerbit;                                               -> tabel tidak sesuai
+
+INSERT tPinjam P1010 A2010 B004 05-03-2021 05-04-2021;          -> data pada tabel buku/anggota tidak ditemukan*
+UPDATE tAnggota A2020 Nuzy Pandeglang Laki-Laki 550-2001;       -> id data tidak dapat ditemukan
+DELETE tAnggota A2009;                                          -> id data tidak dapat ditemukan*
+
+INSERT tBuku B005 Harry_Potter J_K_Rolling Fiksi 2004 Jakarta;              -> query melebihi kolom yang tersedia*
+UPDATE tBuku B003 Harry_Potter J_K_Rolling Fiksi 2004 Jakarta;              -> query melebihi kolom yang tersedia
+DELETE tBuku B001 Harry_Potter;                                             -> query melebihi kolom yang tersedia
+SELECT tAnggota Jakarta;                                                    -> query melebihi kolom yang tersedia
+INSERT UPDATE tBuku B001 The_Maze_Runner James_Dashner Fiksi 2009 Jakarta;  -> query melebihi kolom yang tersedia
+
+INSERT tPinjam P1009 A2003 B003 05-04-2020 06-06-2020           -> tidak memakai titik koma sebagai akhir dari query
+UPDATE tBuku B003 Percy_Jackson Rick_Riordan Fiksi 2005         -> tidak memakai titik koma sebagai akhir dari query*
+DELETE tAnggota A2005                                           -> tidak memakai titik koma sebagai akhir dari query
+SELECT tBuku                                                    -> tidak memakai titik koma sebagai akhir dari query
+INSERT UPDATE tAnggota A2011 Fika Bandung Perempuan 550-1945    -> tidak memakai titik koma sebagai akhir dari query
+
+INSERT tAnggota A20000000004 Agung Serang Laki-Laki 550-2912;                           -> Id melebihi karakter yang sudah ditetapkan
+UPDATE tBuku B008 Harry_Potter_and_The_Order_of_The_Phoenix J_K_Rolling Fiksi 2007;     -> Kolom judul melebihi karakter yang sudah ditetapkan*
+INSERT UPDATE tBuku B009 Narnia_Chronicles Anna_Katherine_Poppleqwell_Susan Fiksi 2005; -> Kolom Pengarang melebihi karakter yang sudah ditetapkan
